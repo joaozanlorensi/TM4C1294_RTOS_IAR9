@@ -5,53 +5,35 @@
     <configuration>
         <name>CM0</name>
         <outputs>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</file>
             <file>$PROJ_DIR$\..\..\..\Source\rtx_thread.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\Source\os_systick.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_semaphore.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_evflags.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</file>
             <file>$PROJ_DIR$\..\..\..\Source\rtx_mutex.c</file>
             <file>$PROJ_DIR$\..\..\..\Source\rtx_system.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</file>
             <file>$PROJ_DIR$\..\..\..\Source\rtx_delay.c</file>
             <file>$PROJ_DIR$\..\..\..\Source\rtx_kernel.c</file>
-            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_delay.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_memory.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_mempool.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\Core\os_systick.o</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_semaphore.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_evflags.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\Source\os_systick.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</file>
             <file>$PROJ_DIR$\CM0\Obj\Core\rtx_evflags.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_evr.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_kernel.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_system.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_timer.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_semaphore.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_msgqueue.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_mutex.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_mempool.o</file>
             <file>$PROJ_DIR$\CM0\Obj\Core\rtx_thread.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_msgqueue.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_memory.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_kernel.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_timer.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_mutex.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_semaphore.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_delay.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_evr.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\Core\rtx_system.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\Core\os_systick.o</file>
         </outputs>
         <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_thread.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 25</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 15</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\Source\os_systick.c</name>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
@@ -60,7 +42,61 @@
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</name>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_thread.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 15</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_mutex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 20</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_system.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 24</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_delay.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 22</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_kernel.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 18</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
@@ -73,16 +109,7 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 22</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 18</file>
+                    <file> 21</file>
                 </tool>
             </outputs>
         </file>
@@ -91,30 +118,21 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 17</file>
+                    <file> 13</file>
                 </tool>
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_mutex.c</name>
+            <name>$PROJ_DIR$\..\..\..\..\Source\os_systick.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 24</file>
+                    <file> 25</file>
                 </tool>
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_system.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 20</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</name>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
@@ -123,29 +141,11 @@
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</name>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 21</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_delay.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 13</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_kernel.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 19</file>
+                    <file> 17</file>
                 </tool>
             </outputs>
         </file>
