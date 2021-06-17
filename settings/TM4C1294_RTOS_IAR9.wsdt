@@ -2,17 +2,17 @@
 <Workspace>
     <ConfigDictionary>
         <CurrentConfigs>
-            <Project>blinky/Debug</Project>
-            <Project>RTX_CM/CM4F</Project>
-            <Project>sinalizador/Debug</Project>
             <Project>tarefas/Debug</Project>
             <Project>temporizador/Debug</Project>
             <Project>UART_inst/Debug</Project>
-            <Project>driverlib/Debug</Project>
-            <Project>prodcons/Debug</Project>
+            <Project>sinalizador/Debug</Project>
             <Project>grlib/Debug</Project>
+            <Project>prodcons/Debug</Project>
+            <Project>RTX_CM/CM4F</Project>
+            <Project>driverlib/Debug</Project>
+            <Project>blinky/Debug</Project>
         </CurrentConfigs>
-        <CurrentProj>tarefas</CurrentProj>
+        <CurrentProj>UART_inst</CurrentProj>
         <OverviewSelected>1</OverviewSelected>
     </ConfigDictionary>
     <WindowStorage>
@@ -21,7 +21,7 @@
                 <ColumnWidth0>24</ColumnWidth0>
                 <ColumnWidth1>1479</ColumnWidth1>
                 <FilterLevel>2</FilterLevel>
-                <LiveFile />
+                <LiveFile></LiveFile>
                 <LiveLogEnabled>0</LiveLogEnabled>
                 <LiveFilterLevel>-1</LiveFilterLevel>
             </IarPane-34048>
@@ -76,6 +76,7 @@
                 </ColumnWidths>
                 <NodeDict>
                     <ExpandedNode>&lt;ws&gt;</ExpandedNode>
+                    <ExpandedNode>&lt;ws&gt;/UART_inst</ExpandedNode>
                 </NodeDict>
             </IarPane-34063>
             <ControlBarVersion>
@@ -90,11 +91,11 @@
                 <RecentlyUsedMenus>1</RecentlyUsedMenus>
                 <MenuShadows>1</MenuShadows>
                 <ShowAllMenusAfterDelay>1</ShowAllMenusAfterDelay>
-                <CommandsUsage>09000000070010860000010000001581000001000000568600000600000014810000020000000E8100000500000046810000010000000784000001000000</CommandsUsage>
+                <CommandsUsage>0B000000090015810000010000001086000001000000568600000600000014810000020000001F810000010000000E81000007000000118600000100000046810000010000000784000001000000</CommandsUsage>
             </MFCToolBarParameters>
             <CommandManager>
-                <CommandsWithoutImages>2A000D8400000F84000008840000FFFFFFFF54840000328100001C8100000984000004840000068400003284000077840000078400000284000003840000108400000584000031840000868400000A840000808C000044D500001E92000028920000299200002592000024960000259600001F9600001D9200003C8400003D840000408400004C8400003E8400004B8400004D8400003F8400003A8400003B8400005A8400005B840000</CommandsWithoutImages>
-                <MenuUserImages>1000599200001000000020810000270000000F8100001F0000000C8100001C000000449200000E0000000E8400005100000030840000530000001F9200000B0000001F810000260000000E8100001E0000002D9200000D0000000B81000022000000D18400000A00000023960000410000000D810000240000002C9200000C000000</MenuUserImages>
+                <CommandsWithoutImages>30000D8400000F84000008840000FFFFFFFF54840000328100001C8100000984000004840000068400003284000077840000078400000284000003840000108400000584000031840000868400000A840000808C000044D500001E92000028920000299200002592000024960000259600001F9600001D9200003C8400003D840000408400004C8400003E8400004B8400004D8400003F8400003A8400003B8400005A8400005B84000053840000818400007D840000828400008384000084840000</CommandsWithoutImages>
+                <MenuUserImages>1000599200001000000020810000270000000F8100001F0000000C8100001C00000030840000530000000E84000051000000449200000E0000001F9200000B0000001F810000260000000E8100001E0000002D9200000D0000000B81000022000000D18400000A00000023960000410000000D810000240000002C9200000C000000</MenuUserImages>
             </CommandManager>
             <Pane-59393>
                 <ID>0</ID>
@@ -198,7 +199,7 @@
                 <ColumnWidth1>76</ColumnWidth1>
                 <ColumnWidth2>914</ColumnWidth2>
                 <FilterLevel>2</FilterLevel>
-                <LiveFile />
+                <LiveFile></LiveFile>
                 <LiveLogEnabled>0</LiveLogEnabled>
                 <LiveFilterLevel>-1</LiveFilterLevel>
             </IarPane-34056>
@@ -220,7 +221,7 @@
                 <ColumnWidth1>76</ColumnWidth1>
                 <ColumnWidth2>914</ColumnWidth2>
                 <FilterLevel>2</FilterLevel>
-                <LiveFile />
+                <LiveFile></LiveFile>
                 <LiveLogEnabled>0</LiveLogEnabled>
                 <LiveFilterLevel>-1</LiveFilterLevel>
             </IarPane-34057>
@@ -256,7 +257,7 @@
                 <ColumnWidth1>76</ColumnWidth1>
                 <ColumnWidth2>914</ColumnWidth2>
                 <FilterLevel>2</FilterLevel>
-                <LiveFile />
+                <LiveFile></LiveFile>
                 <LiveLogEnabled>0</LiveLogEnabled>
                 <LiveFilterLevel>-1</LiveFilterLevel>
             </IarPane-34059>
@@ -294,7 +295,7 @@
             </BasePane-34062>
             <IarPane-34062>
                 <FilterLevel>2</FilterLevel>
-                <LiveFile />
+                <LiveFile></LiveFile>
                 <LiveLogEnabled>0</LiveLogEnabled>
                 <LiveFilterLevel>-1</LiveFilterLevel>
             </IarPane-34062>
@@ -316,16 +317,16 @@
                     <item>2</item>
                 </cg_type>
                 <cg_symbol>
-                    <item />
+                    <item></item>
                 </cg_symbol>
                 <cg_user>
-                    <item />
+                    <item></item>
                 </cg_user>
                 <cg_display>
                     <item>&lt;Right-click on a symbol in the editor to show a call graph&gt;</item>
                 </cg_display>
                 <cg_def_file>
-                    <item />
+                    <item></item>
                 </cg_def_file>
                 <cg_def_line>
                     <item>0</item>
@@ -334,7 +335,7 @@
                     <item>0</item>
                 </cg_def_col>
                 <cg_call_file>
-                    <item />
+                    <item></item>
                 </cg_call_file>
                 <cg_call_line>
                     <item>0</item>
@@ -417,7 +418,7 @@
                     <item>0</item>
                 </SB_TypeFilter>
                 <SB_SBW_File>
-                    <item />
+                    <item></item>
                 </SB_SBW_File>
                 <col-names>
                     <item>File</item>
@@ -533,7 +534,7 @@
         </ChildIdMap>
         <MDIWindows>
             <MDIClientArea-0>
-                <MDITabsState>010000000300000001000000000000000000000001000000010000000200000000000000010000000100000000000000280000002800000001000000010000000000000001000000FFFEFF272400570053005F0044004900520024005C00500072006F006A0065006300740073005C0074006100720065006600610073005C007300720063005C0074006100720065006600610073002E00630001000000FFFF010014004966436F6E74656E7453746F72616765496D706CFFFEFF00FFFEFFFF24013C003F0078006D006C002000760065007200730069006F006E003D00220031002E0030002200200065006E0063006F00640069006E0067003D0022005500540046002D00380022003F003E000A003C0052006F006F0074003E000A0020002000200020003C004E0075006D0052006F00770073003E0031003C002F004E0075006D0052006F00770073003E000A0020002000200020003C004E0075006D0043006F006C0073003E0031003C002F004E0075006D0043006F006C0073003E000A0020002000200020003C00580050006F0073003E0030003C002F00580050006F0073003E000A0020002000200020003C00590050006F0073003E0030003C002F00590050006F0073003E000A0020002000200020003C00530065006C00530074006100720074003E0030003C002F00530065006C00530074006100720074003E000A0020002000200020003C00530065006C0045006E0064003E0030003C002F00530065006C0045006E0064003E000A0020002000200020003C00580050006F00730032003E0030003C002F00580050006F00730032003E000A0020002000200020003C00590050006F00730032003E0031003C002F00590050006F00730032003E000A0020002000200020003C00530065006C005300740061007200740032003E003500360039003C002F00530065006C005300740061007200740032003E000A0020002000200020003C00530065006C0045006E00640032003E003500360039003C002F00530065006C0045006E00640032003E000A003C002F0052006F006F0074003E000A00FFFEFF0974006100720065006600610073002E00630000000000FFFFFFFFFFFFFFFF0000000010000000C5D4F200FFDC7800BECEA100F0A0A100BCA8E1009CC1B600F7B88600D9ADC200A5C2D700B3A6BE00EAD6A300F6FA7D00B5E99D005FC3CF00C1838300CACAD5000100000001000000020000000A010000490000000006000070020000</MDITabsState>
+                <MDITabsState>010000000300000001000000000000000000000001000000010000000200000000000000010000000100000000000000280000002800000000000000</MDITabsState>
             </MDIClientArea-0>
         </MDIWindows>
     </WindowStorage>
