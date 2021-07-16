@@ -2,39 +2,38 @@
 #include "driverleds.h" // device drivers
 #include "cmsis_os2.h" // CMSIS-RTOS
 
-osThreadId_t thread1_id, thread2_id;
+osThreadId_t thread1_id, thread2_id, thread3_id, thread4_id;
 
-void thread1(void *arg){
+typedef struct led_t {
+  uint8_t selected_led;
+  uint16_t delay;
+} led_t;
+
+void my_thread(void *arg){
+  led_t* led = (led_t*) arg;
   uint8_t state = 0;
   
   while(1){
-    state ^= LED1;
-    LEDWrite(LED1, state);
-    osDelay(100);
+    state ^= (led->selected_led);
+    LEDWrite(led->selected_led, state);
+    osDelay(led->delay);
   } // while
-} // thread1
-
-void thread2(void *arg){
-  uint8_t state = 0;
-  uint32_t tick;
-  
-  while(1){
-    tick = osKernelGetTickCount();
-    
-    state ^= LED2;
-    LEDWrite(LED2, state);
-    
-    osDelayUntil(tick + 100);
-  } // while
-} // thread2
+} // my_thread
 
 void main(void){
-  LEDInit(LED2 | LED1);
-
+  LEDInit(LED1 | LED2 | LED3 | LED4);
+    
+  led_t a = {.selected_led = LED1, .delay = 200};
+  led_t b = {.selected_led = LED2, .delay = 300};
+  led_t c = {.selected_led = LED3, .delay = 500};
+  led_t d = {.selected_led = LED4, .delay = 700};
+  
   osKernelInitialize();
 
-  thread1_id = osThreadNew(thread1, NULL, NULL);
-  thread2_id = osThreadNew(thread2, NULL, NULL);
+  thread1_id = osThreadNew(my_thread, &a, NULL);
+  thread2_id = osThreadNew(my_thread, &b, NULL);
+  thread3_id = osThreadNew(my_thread, &c, NULL);
+  thread4_id = osThreadNew(my_thread, &d, NULL);
 
   if(osKernelGetState() == osKernelReady)
     osKernelStart();

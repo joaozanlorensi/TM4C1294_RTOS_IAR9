@@ -1,0 +1,90 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\driverleds.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\drivers\driverleds.c -xcl_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\driverleds.xcl -macro_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\driverleds.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\drivers\driverleds.c --diag_suppress Pa050 -o D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\ewarm\Obj\ --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\drivers\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\TivaWare_C_Series-2.1.4.178\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\Core\Include\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\Include\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Include\ -Ohz --use_c++_inline -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\driverleds.tmp
+  rspfile_name = D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\driverleds.xcl.rsp
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\RTX_Config.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\RTX_Config.c -xcl_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\RTX_Config.xcl -macro_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\RTX_Config.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\RTX_Config.c --diag_suppress Pa050 -o D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\ewarm\Obj\ --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\drivers\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\TivaWare_C_Series-2.1.4.178\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\Core\Include\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\Include\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Include\ -Ohz --use_c++_inline -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\RTX_Config.tmp
+  rspfile_name = D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\RTX_Config.xcl.rsp
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\rtx_lib.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\rtx_lib.c -xcl_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\rtx_lib.xcl -macro_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\rtx_lib.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\rtx_lib.c --diag_suppress Pa050 -o D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\ewarm\Obj\ --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\drivers\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\TivaWare_C_Series-2.1.4.178\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\Core\Include\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\Include\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Include\ -Ohz --use_c++_inline -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\rtx_lib.tmp
+  rspfile_name = D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\rtx_lib.xcl.rsp
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\sinalizador.c -xcl_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.xcl -macro_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\sinalizador.c --diag_suppress Pa050 -o D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\ewarm\Obj\ --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\drivers\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\TivaWare_C_Series-2.1.4.178\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\Core\Include\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\Include\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Include\ -Ohz --use_c++_inline -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.tmp
+  rspfile_name = D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.xcl.rsp
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\system_TM4C1294_TW.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\system_TM4C1294_TW.c -xcl_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\system_TM4C1294_TW.xcl -macro_file D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\system_TM4C1294_TW.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\system_TM4C1294_TW.c --diag_suppress Pa050 -o D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\ewarm\Obj\ --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\drivers\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\TivaWare_C_Series-2.1.4.178\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\Core\Include\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\Include\ -I D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Include\ -Ohz --use_c++_inline -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\system_TM4C1294_TW.tmp
+  rspfile_name = D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\system_TM4C1294_TW.xcl.rsp
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\driverleds.pbi : INDEXER D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\driverleds.xcl |  $
+D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\drivers\driverleds.c
+  flags = -out=D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\driverleds.pbi -f D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\driverleds.xcl
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\RTX_Config.pbi : INDEXER D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\RTX_Config.xcl |  $
+D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\RTX_Config.c
+  flags = -out=D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\RTX_Config.pbi -f D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\RTX_Config.xcl
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\rtx_lib.pbi : INDEXER D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\rtx_lib.xcl |  $
+D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\rtx_lib.c
+  flags = -out=D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\rtx_lib.pbi -f D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\rtx_lib.xcl
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.pbi : INDEXER D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.xcl |  $
+D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\sinalizador.c
+  flags = -out=D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.pbi -f D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.xcl
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\system_TM4C1294_TW.pbi : INDEXER D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\system_TM4C1294_TW.xcl |  $
+D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\system_TM4C1294_TW.c
+  flags = -out=D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\system_TM4C1294_TW.pbi -f D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\system_TM4C1294_TW.xcl
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.pbw : MAKEBROWSE D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.pbd
+  flags = D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.pbd -output D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.pbw
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part0.pbi : PDBLINK D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\driverleds.pbi |  $
+D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\RTX_Config.pbi
+  flags = -M D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part0.pbi D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\driverleds.pbi D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\RTX_Config.pbi
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part1.pbi : PDBLINK D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\rtx_lib.pbi |  $
+D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.pbi
+  flags = -M D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part1.pbi D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\rtx_lib.pbi D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.pbi
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part2.pbi : PDBLINK D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\system_TM4C1294_TW.pbi
+  flags = -M D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part2.pbi D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\system_TM4C1294_TW.pbi
+
+build D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.pbd : PDBLINK D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part0.pbi |  $
+D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part1.pbi $
+D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part2.pbi
+  flags = -M D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.pbd D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part0.pbi D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part1.pbi D$:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador_part2.pbi
+

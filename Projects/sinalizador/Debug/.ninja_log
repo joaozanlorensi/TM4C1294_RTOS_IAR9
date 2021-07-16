@@ -1,0 +1,9 @@
+# ninja log v5
+9	604	6481678432591168	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/sinalizador/ewarm/Obj/startup_TM4C1294.o	19d6e280f9678f5f
+1	720	6481678433391171	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/sinalizador/ewarm/Obj/driverleds.o	81b0c16c1b55d3b1
+610	870	6481678435091876	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/sinalizador/ewarm/Obj/sinalizador.o	a6edbd5e76f3c5bd
+735	1071	6481678437113813	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/sinalizador/ewarm/Obj/system_TM4C1294_TW.o	3e5e5fe756190d5b
+884	1194	6481678438362924	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/sinalizador/ewarm/Obj/RTX_Config.o	367034d2662113bd
+1088	1321	6481678439713005	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/sinalizador/ewarm/Obj/rtx_lib.o	be0dee31a18e56c7
+1340	2059	6481678447062385	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/sinalizador/ewarm/Exe/sinalizador.out	7b2863f8ec312977
+2075	2275	6481678449345963	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/sinalizador/ewarm/Exe/sinalizador.bin	76d94f9f858b680f
