@@ -1,0 +1,14 @@
+# ninja log v5
+7	439	6488671688845703	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Obj/startup_TM4C1294.o	beaeff4cdbd21c89
+445	651	6488671690868332	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Obj/RTX_Config.o	69f89d669d4e4f67
+1	685	6488671691228338	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Obj/driverleds.o	231d1eddeda4beec
+665	847	6488671692776787	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Obj/prodcons.o	decd7294a64f6cf
+701	1010	6488671694335427	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Obj/system_TM4C1294_TW.o	fb94106a83351fb2
+864	1067	6488671695030571	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Obj/rtx_lib.o	fcd7360f01ebac33
+1081	2027	6488671704498063	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Exe/prodcons.out	5f5f1d088af61c20
+2041	2251	6488671706948917	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Exe/prodcons.bin	ce5a031b18f435f0
+10	224	6488770223719162	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Obj/rtx_lib.o	fcd7360f01ebac33
+4	242	6488770223679167	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Obj/RTX_Config.o	69f89d669d4e4f67
+236	425	6488770225726700	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Obj/prodcons.o	decd7294a64f6cf
+440	690	6488770228286889	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Exe/prodcons.out	5f5f1d088af61c20
+708	825	6488770229866748	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/prodcons/ewarm/Exe/prodcons.bin	ce5a031b18f435f0

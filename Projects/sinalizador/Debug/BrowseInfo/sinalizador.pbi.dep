@@ -1,13 +1,13 @@
 D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\Debug\BrowseInfo\sinalizador.pbi: \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ysizet.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stddef.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\Include\cmsis_os2.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\drivers\driverleds.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\sinalizador.c \
   D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\system_tm4c1294.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\src\sinalizador.c
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\drivers\driverleds.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\sinalizador\..\..\CMSIS-5.6.0\CMSIS\RTOS2\Include\cmsis_os2.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stddef.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ysizet.h
