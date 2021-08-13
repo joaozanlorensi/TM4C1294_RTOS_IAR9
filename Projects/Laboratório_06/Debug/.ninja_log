@@ -1,0 +1,20 @@
+# ninja log v5
+3	368	6498333939248141	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Obj/main.o	dd7cff11c5b47957
+3	376	6495547741334341	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Obj/driverleds.o	4fb5ec4fd12d58c7
+391	711	6495547744294593	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Obj/system_TM4C1294_TW.o	756eac7404eb9448
+417	636	6495547743899453	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Obj/rtx_lib.o	b0f096fbae01286d
+381	537	6498333940876217	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Exe/main.out	f29ccc9d19dfc8b8
+414	568	6495539476214028	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Obj/startup_TM4C1294.o	1af9960664987c1a
+554	628	6498333941928027	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Exe/Laboratório_06.bin	362b2b50a86e90c7
+161	405	6495547741534312	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Obj/RTX_Config.o	aa56a28416448e36
+5	188	6495548105375130	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Obj/driverbuttons.o	b5c028c0ea020ea5
+8	328	6496602013204994	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Obj/newMain.o	ace80395a5775fb4
+5	298	6498336388580601	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Obj/main.o	dd7cff11c5b47957
+309	515	6498336390703142	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Exe/main.out	f29ccc9d19dfc8b8
+536	623	6498336391984082	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Exe/Laboratório_06.bin	362b2b50a86e90c7
+3	406	6498339470897833	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Obj/main.o	dd7cff11c5b47957
+420	696	6498339473795939	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Exe/main.out	f29ccc9d19dfc8b8
+715	757	6498339474595571	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Exe/Laboratório_06.bin	362b2b50a86e90c7
+3	271	6498339874813601	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Obj/main.o	dd7cff11c5b47957
+283	528	6498339877295490	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Exe/main.out	f29ccc9d19dfc8b8
+547	633	6498339878512444	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/Laboratório_06/ewarm/Exe/Laboratório_06.bin	362b2b50a86e90c7
