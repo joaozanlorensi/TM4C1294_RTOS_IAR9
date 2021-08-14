@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.2.313/W64 for ARM                  24/Jul/2021  22:34:59
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  14/Aug/2021  17:51:15
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
@@ -408,7 +408,7 @@ GPIODirModeSet               0x1fdd    0x28  Code  Gb  gpio.o [4]
 GPIOIntClear                 0x2159     0x8  Code  Gb  gpio.o [4]
 GPIOIntEnable                0x2153     0x6  Code  Gb  gpio.o [4]
 GPIOIntTypeSet               0x2005    0x4c  Code  Gb  gpio.o [4]
-GPIOJ_Handler                0x2491    0x3c  Code  Gb  main.o [1]
+GPIOJ_Handler                0x2491    0x3a  Code  Gb  main.o [1]
 GPIOPadConfigSet             0x2051   0x102  Code  Gb  gpio.o [4]
 GPIOPinTypeGPIOInput         0x216d    0x14  Code  Gb  gpio.o [4]
 GPIOPinTypeGPIOOutput        0x2181     0xa  Code  Gb  gpio.o [4]
@@ -463,7 +463,7 @@ _call_main                   0x2a99          Code  Gb  cmain.o [5]
 _exit                        0x2ab5          Code  Gb  cexit.o [5]
 buffer                  0x2000'13f8     0x8  Data  Gb  main.o [1]
 cheio_id                0x2000'1408     0x4  Data  Gb  main.o [1]
-consumidor                   0x24cd    0x38  Code  Gb  main.o [1]
+consumidor                   0x24cb    0x38  Code  Gb  main.o [1]
 consumidor_id           0x2000'1400     0x4  Data  Gb  main.o [1]
 count                   0x2000'13f4     0x1  Data  Gb  main.o [1]
 exit                         0x2aaf     0x4  Code  Gb  exit.o [3]
@@ -473,7 +473,7 @@ g_pui32VCOFrequencies        0x1c74     0x8  Data  Lc  sysctl.o [4]
 g_pui32Xtals                 0x2878    0x6c  Data  Lc  sysctl.o [4]
 g_sXTALtoMEMTIM              0x29cc    0x30  Data  Lc  sysctl.o [4]
 index_p                 0x2000'13f5     0x1  Data  Gb  main.o [1]
-main                         0x2505    0x50  Code  Gb  main.o [1]
+main                         0x2503    0x50  Code  Gb  main.o [1]
 osDelay                      0x2641    0x38  Code  Gb  rtx_delay.o [2]
 osKernelGetState             0x1e75    0x40  Code  Gb  rtx_kernel.o [2]
 osKernelInitialize           0x1e3d    0x38  Code  Gb  rtx_kernel.o [2]

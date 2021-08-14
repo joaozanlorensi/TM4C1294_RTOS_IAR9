@@ -62,6 +62,7 @@
             <file>$PROJ_DIR$\..\..\CMSIS-5.6.0\CMSIS\Core\Include\cmsis_version.h</file>
             <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
             <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
+            <file>$PROJ_DIR$\..\Laboratório_05\src\main.c</file>
         </outputs>
         <file>
             <name>$PROJ_DIR$\src\main.c</name>

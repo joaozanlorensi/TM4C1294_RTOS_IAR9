@@ -9,6 +9,7 @@
 #include "driverbuttons.h" // Projects/drivers
 
 #define BUFFER_SIZE 8
+#define NO_WAIT 0
 
 osThreadId_t consumidor_id;
 osSemaphoreId_t vazio_id, cheio_id;
@@ -22,7 +23,7 @@ void GPIOJ_Handler(void)
 {
   ButtonIntClear(USW1);
   
-  osSemaphoreAcquire(vazio_id, osWaitForever); // há espaço disponível?
+  osSemaphoreAcquire(vazio_id, NO_WAIT);
   buffer[index_p] = count; // coloca no buffer
   osSemaphoreRelease(cheio_id);
   
