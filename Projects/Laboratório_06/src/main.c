@@ -3,210 +3,159 @@
 #include "system_tm4c1294.h" // CMSIS-Core
 #include "driverbuttons.h" // Projects/drivers
 #include "driverleds.h"
-#include "cmsis_os2.h"
-
+#include "cmsis_os2.h" 
+#define MSGQUEUE_OBJECTS 16
 #define QT_LEDS 4
+#define QT_LED_PROPERTIES 2 // "selected led" and "duty cycle"
+#define PERIOD 10 // in ms
 #define STEP_DUTY_CYCLE 10
-#define PERIOD 10 // Period in ms
-#define MSGQUEUE_OBJECTS 4
 
-typedef enum {BLINK_LED1=0, BLINK_LED2, BLINK_LED3, BLINK_LED4} state_t;
+#define SELECTED_LED 0
+#define DUTY_CYCLE 1
+#define INITIAL_DUTY_CYCLE 10
+
+int event_usw1 = 0;
+int event_usw2 = 0;
+
+// Mutex Definitions
+osMutexId_t phases_mut_id;
+typedef enum {BLINK_LED1= 0, BLINK_LED2, BLINK_LED3, BLINK_LED4} state_t;
 
 state_t CurrentState;
 
-typedef struct {
-  unsigned char led;
-  uint8_t duty_cycle;
-} led_t;
-
-osMessageQueueId_t mid_LED1Queue;
-osMessageQueueId_t mid_LED2Queue;
-osMessageQueueId_t mid_LED3Queue;
-osMessageQueueId_t mid_LED4Queue;
-
-osThreadId_t tid_led;
-osThreadId_t tid_control;
-
-led_t thread_LED1_args;
-led_t thread_LED2_args;
-led_t thread_LED3_args;
-led_t thread_LED4_args;
-
-uint8_t event_usw1;
-uint8_t event_usw2;
-
-osMutexId_t led_mut_id;
-
-const osMutexAttr_t LED_MutexAttr = {
-  "LED_Mutex",                              // Comprehensive mutex name
+const osMutexAttr_t Phases_Mutex_attr = {
+  "PhasesMutex",                            // human readable mutex name
   osMutexRecursive | osMutexPrioInherit,    // attr_bits
-  NULL,                                     // Memory for control block   
-  0U                                        // Size for control block
-  };
+  NULL,                                     // memory for control block   
+  0U                                        // size for control block
+};
 
-// Functions
+// Message Queue Definitions
+osMessageQueueId_t mid_MsgQueue;
+
+typedef struct {
+  char leds[QT_LEDS][QT_LED_PROPERTIES];
+} MSGQUEUE_OBJ_t;
+ 
+// Useful Functions
 void MutexLEDOn (unsigned char led) {
-  osMutexAcquire(led_mut_id, osWaitForever); // Try to acquire mutex
+  osMutexAcquire(phases_mut_id, osWaitForever); // try to acquire mutex
   LEDOn(led);
-  osMutexRelease(led_mut_id);
+  osMutexRelease(phases_mut_id);
 }
-
 void MutexLEDOff (unsigned char led) {
-  osMutexAcquire(led_mut_id, osWaitForever); // Try to acquire mutex
+  osMutexAcquire(phases_mut_id, osWaitForever); // try to acquire mutex
   LEDOff(led);
-  osMutexRelease(led_mut_id);
+  osMutexRelease(phases_mut_id);
+}
+void PWM(char led, char duty_cycle) {
+  MutexLEDOn(led);
+  osDelay(PERIOD * duty_cycle / 100);
+  MutexLEDOff(led);
+  osDelay(PERIOD - PERIOD * duty_cycle / 100);
 }
 
-void PWM (led_t selected_led) {
-  while(1) {
-    MutexLEDOn(selected_led.led);
-    osDelay(PERIOD * selected_led.duty_cycle/100);
-    MutexLEDOff(selected_led.led);
-    osDelay(PERIOD - PERIOD * selected_led.duty_cycle/100);
+// Thread Definitions
+osThreadId_t tid_ThreadControl;
+osThreadId_t tid_ThreadLED;
+
+void ThreadControl (void *argument) {
+  MSGQUEUE_OBJ_t msg;
+ 
+  while (1) {
+    if(CurrentState == BLINK_LED1) { 
+      msg.leds[0][SELECTED_LED] = LED1; // Selected LED
+      msg.leds[0][DUTY_CYCLE] = INITIAL_DUTY_CYCLE; // Duty Cycle
+      
+      msg.leds[1][SELECTED_LED] = LED2; // Selected LED
+      msg.leds[1][DUTY_CYCLE] = INITIAL_DUTY_CYCLE; // Duty Cycle
+      
+      msg.leds[2][SELECTED_LED] = LED3; // Selected LED
+      msg.leds[2][DUTY_CYCLE] = INITIAL_DUTY_CYCLE; // Duty Cycle
+      
+      msg.leds[3][SELECTED_LED] = LED4; // Selected LED
+      msg.leds[3][DUTY_CYCLE] = INITIAL_DUTY_CYCLE; // Duty Cycle
+    }
+    
+    if(event_usw1 && event_usw2){
+      msg.leds[CurrentState][DUTY_CYCLE] = (msg.leds[CurrentState][DUTY_CYCLE] + STEP_DUTY_CYCLE) % 100;
+      CurrentState = (CurrentState) % (QT_LEDS + 1);
+      event_usw1 = 0;
+      event_usw2 = 0;
+    }
+    else if(event_usw2){
+      msg.leds[CurrentState][DUTY_CYCLE] = (msg.leds[CurrentState][DUTY_CYCLE] + STEP_DUTY_CYCLE) % 100;
+      event_usw2 = 0;
+    }
+    else if(event_usw1){
+      CurrentState = (CurrentState + 1) % (QT_LEDS + 1);
+      event_usw1 = 0;
+    }
+      
+    osMessageQueuePut(mid_MsgQueue, &msg, 0U, 0U);
+    osThreadYield();
+  }
+}
+ 
+void ThreadLED (void *argument) {
+  MSGQUEUE_OBJ_t msg;
+  osStatus_t status;
+ 
+  while (1) {
+    status = osMessageQueueGet(mid_MsgQueue, &msg, NULL, 0U);   // wait for message
+    if (status == osOK) {
+      for (int i = 0; i <= QT_LEDS; i++) {
+        PWM(msg.leds[i][SELECTED_LED], msg.leds[i][DUTY_CYCLE]);
+      }
+      //Tilts the selected LED for a while as so as we can notice that it is the active LED
+      PWM(msg.leds[CurrentState][SELECTED_LED], msg.leds[CurrentState][DUTY_CYCLE]);
+    }
   }
 }
 
-// Interruption Handlers
+// Interruption Handler Definitions
 void GPIOJ_Handler(void)
 {
   ButtonIntClear(USW1 | USW2);
-  if(ButtonRead(USW1)){
+  if(ButtonRead(USW1) && ButtonRead(USW2)){
+    ButtonIntClear(USW1);
+    ButtonIntClear(USW2);
+    event_usw1 = 1;
+    event_usw2 = 1;
+  }
+  else if(ButtonRead(USW1)){
     ButtonIntClear(USW1);
     event_usw1 = 1;
-    osThreadFlagsSet(tid_control, 0x0001); // Set signal to thread 'Control'
   }
   else if(ButtonRead(USW2)) {
     ButtonIntClear(USW2);
     event_usw2 = 1;
-    osThreadFlagsSet(tid_control, 0x0001); // Set signal to thread 'Control'
   }
 }
 
-// Threads
-void ThreadLED (void *argument) {
-  for (;;) {
-    osThreadFlagsWait(0x0001, osFlagsWaitAny, osWaitForever);
-    led_t msgLED1, msgLED2, msgLED3, msgLED4;
-
-    if(CurrentState == BLINK_LED1){
-      osMessageQueueGet(mid_LED1Queue, &msgLED1, NULL, NULL);
-      PWM(msgLED1);
-    }
-    else if(CurrentState == BLINK_LED2){
-      osMessageQueueGet(mid_LED2Queue, &msgLED2, NULL, NULL);
-      PWM(msgLED2);
-    }
-    else if(CurrentState == BLINK_LED3){
-      PWM(msgLED3);
-      osMessageQueueGet(mid_LED3Queue, &msgLED3, NULL, NULL);
-    }
-    else if(CurrentState == BLINK_LED4){
-      PWM(msgLED4);
-      osMessageQueueGet(mid_LED4Queue, &msgLED4, NULL, NULL);
-    }
+// Initialization functions
+void InitMsgQueue (void) {
+  mid_MsgQueue = osMessageQueueNew(MSGQUEUE_OBJECTS, sizeof(MSGQUEUE_OBJ_t), NULL);
+  tid_ThreadControl = osThreadNew(ThreadControl, NULL, NULL);
+  tid_ThreadLED = osThreadNew(ThreadLED, NULL, NULL);
 }
-}
-
-void setLEDDutyCycle() {
-  if(CurrentState == BLINK_LED1) {
-    thread_LED1_args = (led_t) {.led = LED1, .duty_cycle = (thread_LED1_args.duty_cycle + STEP_DUTY_CYCLE) % 100};
-    thread_LED2_args = (led_t) {.led = LED2, .duty_cycle = 10};
-    thread_LED3_args = (led_t) {.led = LED3, .duty_cycle = 10};
-    thread_LED4_args = (led_t) {.led = LED4, .duty_cycle = 10};
-  }
-  if(CurrentState == BLINK_LED1) {
-    thread_LED1_args = (led_t) {.led = LED1, .duty_cycle = 10};
-    thread_LED2_args = (led_t) {.led = LED2, .duty_cycle = (thread_LED2_args.duty_cycle + STEP_DUTY_CYCLE) % 100};
-    thread_LED3_args = (led_t) {.led = LED3, .duty_cycle = 10};
-    thread_LED4_args = (led_t) {.led = LED4, .duty_cycle = 10};
-  }
-  if(CurrentState == BLINK_LED1) {
-    thread_LED1_args = (led_t) {.led = LED1, .duty_cycle = 10};
-    thread_LED2_args = (led_t) {.led = LED2, .duty_cycle = 10};
-    thread_LED3_args = (led_t) {.led = LED3, .duty_cycle = (thread_LED3_args.duty_cycle + STEP_DUTY_CYCLE) % 100};
-    thread_LED4_args = (led_t) {.led = LED4, .duty_cycle = 10};
-  }
-  if(CurrentState == BLINK_LED1) {
-    thread_LED1_args = (led_t) {.led = LED1, .duty_cycle = 10};
-    thread_LED2_args = (led_t) {.led = LED2, .duty_cycle = 10};
-    thread_LED3_args = (led_t) {.led = LED3, .duty_cycle = 10};
-    thread_LED4_args = (led_t) {.led = LED4, .duty_cycle = (thread_LED4_args.duty_cycle + STEP_DUTY_CYCLE) % 100};
-  }
-  
-}
-
-void ThreadControl(void *argument) {
-  for(;;){
-    osThreadFlagsWait(0x0001, osFlagsWaitAny, osWaitForever);
-    led_t msg_LED1;
-    led_t msg_LED2;
-    led_t msg_LED3;
-    led_t msg_LED4;
-    if(event_usw1 == 1 && event_usw2 == 1) {
-      CurrentState = (CurrentState + 1) % QT_LEDS;
-      
-      event_usw1 = 0;
-      event_usw2 = 0;
-    }
-    else if(event_usw1 == 1) {
-      CurrentState = (CurrentState + 1) % QT_LEDS;
-      MutexLEDOn(LED1);
-      event_usw1 = 0;
-    }
-    else if(event_usw2 == 1) {
-      
-      event_usw2 = 0;
-    }
-    
-    osMessageQueuePut(mid_LED1Queue, &msg_LED1, 0U, 0U);
-    osMessageQueuePut(mid_LED2Queue, &msg_LED2, 0U, 0U);
-    osMessageQueuePut(mid_LED3Queue, &msg_LED3, 0U, 0U);
-    osMessageQueuePut(mid_LED4Queue, &msg_LED4, 0U, 0U);
-    
-    osThreadFlagsSet(tid_led, 0x0001); // Set signal to ThreadControl thread 
-    
-  }
-}
-
-void app_main (void *argument) {
-  led_mut_id = osMutexNew(&LED_MutexAttr);
-  
-  led_t thread_LED1_args = (led_t) {.led = LED1, .duty_cycle = 10};
-  led_t thread_LED2_args = (led_t) {.led = LED2, .duty_cycle = 10};
-  led_t thread_LED3_args = (led_t) {.led = LED3, .duty_cycle = 10};
-  led_t thread_LED4_args = (led_t) {.led = LED4, .duty_cycle = 10};
-  
-  mid_LED1Queue = osMessageQueueNew(MSGQUEUE_OBJECTS, sizeof(led_t), NULL);
-  mid_LED1Queue = osMessageQueueNew(MSGQUEUE_OBJECTS, sizeof(led_t), NULL);
-  mid_LED1Queue = osMessageQueueNew(MSGQUEUE_OBJECTS, sizeof(led_t), NULL);
-  mid_LED1Queue = osMessageQueueNew(MSGQUEUE_OBJECTS, sizeof(led_t), NULL);
-  
-  tid_control  = osThreadNew(ThreadControl,  NULL, NULL);
-  tid_led  = osThreadNew(ThreadLED,  NULL, NULL);
-  
-  CurrentState = 0;
-  osThreadFlagsSet(tid_control, 0x0001); // Set signal to ThreadControl thread 
-  
-  osDelay(osWaitForever);
-  while(1);
-}
-
-int main (void) {
-  // System Initialization
-  SystemInit();
-  ButtonInit(USW1);
-  ButtonInit(USW2);
-  ButtonIntEnable(USW1);
-  ButtonIntEnable(USW2);
+void initPeripherals (void) {
   LEDInit(LED4 | LED3 | LED2 | LED1);
+  ButtonInit(USW1 | USW2);
+  ButtonIntEnable(USW1 | USW2);
+}
+
+// Main
+int main (void) {
+  osKernelInitialize();
   
-  event_usw1 = 0;
-  event_usw2 = 0;
+  initPeripherals();
+  InitMsgQueue();
   
-  osKernelInitialize();                 // Initialize CMSIS-RTOS
-  osThreadNew(app_main, NULL, NULL);    // Create application main thread
+  CurrentState = BLINK_LED1;
+
   if (osKernelGetState() == osKernelReady) {
-    osKernelStart();                    // Start thread execution
+    osKernelStart();
   }
 
   while(1);
