@@ -33,6 +33,8 @@ void GPIOJ_Handler(void)
   
   count++;
   count &= 0x0F; // produz nova informação
+  
+  osThreadYield();
 }
 
 void consumidor(void *arg){
