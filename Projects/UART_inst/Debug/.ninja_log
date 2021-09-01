@@ -1,1 +1,9 @@
 # ninja log v5
+8	473	6515571411279631	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/UART_inst/ewarm/Obj/startup_TM4C1294.o	93b8edf3464f978d
+1	659	6515571413041775	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/UART_inst/ewarm/Obj/RTX_Config.o	847fa056a53e7804
+484	838	6515571414677729	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/UART_inst/ewarm/Obj/rtx_lib.o	e1585371d8739aec
+861	1238	6515571418807935	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/UART_inst/ewarm/Obj/system_TM4C1294_TW.o	7fa3c899023a4143
+676	1307	6515571419480716	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/UART_inst/ewarm/Obj/uartstdio.o	f1ef15de10793afd
+1255	1545	6515571421865505	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/UART_inst/ewarm/Obj/UART_inst.o	40f75b6429ecc53f
+1565	2464	6515571430830226	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/UART_inst/ewarm/Exe/UART_inst.out	af40edf7906e20c5
+2485	2654	6515571433093026	D:/Users/joaoz/Desktop/Repos/TM4C1294_RTOS_IAR9/Projects/UART_inst/ewarm/Exe/UART_inst.bin	86a93ded938b095

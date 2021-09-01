@@ -1,22 +1,22 @@
 D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\Debug\BrowseInfo\uartstdio.pbi: \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\TivaWare_C_Series-2.1.4.178\utils\uartstdio.c \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\Projects\UART_inst\src\UART_Config.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdbool.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdarg.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_ints.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_types.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_uart.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\driverlib\debug.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\driverlib\rom.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\driverlib\rom_map.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\utils\uartstdio.h \
   D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\driverlib\uart.h \
-  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\utils\uartstdio.h
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\driverlib\rom_map.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\driverlib\rom.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\driverlib\debug.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_uart.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_types.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_ints.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdarg.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdbool.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\Projects\UART_inst\..\..\Projects\UART_inst\src\UART_Config.h \
+  D:\Users\joaoz\Desktop\Repos\TM4C1294_RTOS_IAR9\TivaWare_C_Series-2.1.4.178\utils\uartstdio.c

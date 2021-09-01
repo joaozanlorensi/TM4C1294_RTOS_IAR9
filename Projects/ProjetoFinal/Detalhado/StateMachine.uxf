@@ -1,0 +1,44 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLState</id><coordinates><x>96</x><y>284</y><w>130</w><h>110</h></coordinates><panel_attributes>MOVING_STRAIGHT
+--
+do/UARTprintf("A[...];");</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>486</x><y>304</y><w>20</w><h>20</h></coordinates><panel_attributes>type=initial</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>46</x><y>334</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>216</x><y>324</y><w>280</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
+Sensors detect obstacle or curve ahead
+or vehicle close to the end of the lap</panel_attributes><additional_attributes>10;20;260;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>476</x><y>254</y><w>230</w><h>290</h></coordinates><panel_attributes>BRAKING
+--
+
+
+
+valign=top
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>906</x><y>344</y><w>150</w><h>60</h></coordinates><panel_attributes>TURNING_LEFT
+--
+do/UARTprintf("V[...];");
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>906</x><y>454</y><w>150</w><h>70</h></coordinates><panel_attributes>TURNING_RIGHT
+--
+do/UARTprintf("V-[...];");
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>146</x><y>384</y><w>860</w><h>200</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>840;160;840;180;10;180;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>146</x><y>224</y><w>860</w><h>80</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>840;30;840;10;10;10;10;60</additional_attributes></element><element><id>UMLState</id><coordinates><x>536</x><y>344</y><w>150</w><h>60</h></coordinates><panel_attributes>STOPPING
+--
+do/UARTprintf("S;");
+
+
+
+valign=top
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>536</x><y>454</y><w>150</w><h>60</h></coordinates><panel_attributes>HARD_STOPPED
+--
+do/UARTprintf("E;");
+
+
+valign=top
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>486</x><y>294</y><w>180</w><h>70</h></coordinates><panel_attributes>lt=-&gt;
+Distant object or curve</panel_attributes><additional_attributes>10;20;160;20;160;50</additional_attributes></element><element><id>Relation</id><coordinates><x>486</x><y>304</y><w>190</w><h>170</h></coordinates><panel_attributes>lt=-&gt;
+Object extremely close</panel_attributes><additional_attributes>10;10;10;130;170;130;170;150</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>46</x><y>334</y><w>20</w><h>20</h></coordinates><panel_attributes>type=initial</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>866</x><y>254</y><w>220</w><h>290</h></coordinates><panel_attributes>TURNING_LEFT
+--
+valign=top
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>314</y><w>190</w><h>60</h></coordinates><panel_attributes>lt=-&gt;
+Vehicle not reaching 
+end of lap or curve or 
+obstacle ahead</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>876</x><y>294</y><w>180</w><h>70</h></coordinates><panel_attributes>lt=-&gt;
+Object to the right or 
+curve to the left</panel_attributes><additional_attributes>10;20;160;20;160;50</additional_attributes></element><element><id>Relation</id><coordinates><x>876</x><y>304</y><w>190</w><h>170</h></coordinates><panel_attributes>lt=-&gt;
+Object to the left or 
+curve to the right</panel_attributes><additional_attributes>10;10;10;130;170;130;170;150</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>876</x><y>304</y><w>20</w><h>20</h></coordinates><panel_attributes>type=initial</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>146</x><y>384</y><w>860</w><h>200</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>840;160;840;180;10;180;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>176</x><y>384</y><w>320</w><h>100</h></coordinates><panel_attributes>lt=-&gt;
+Obstacles went away</panel_attributes><additional_attributes>300;80;10;80;10;10</additional_attributes></element><element><id>UMLFrame</id><coordinates><x>40</x><y>204</y><w>1080</w><h>380</h></coordinates><panel_attributes>State Machine - Auto guided car</panel_attributes><additional_attributes></additional_attributes></element></diagram>
